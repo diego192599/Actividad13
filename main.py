@@ -21,5 +21,15 @@ class EmpresaMensjeria:
             print("Este nombre ya esta registrado")
             return
         self.repartidores.append(repartidor)
-
+    def orden_Paquetes(self):
+        def quick_sort(lista):
+            if len(lista)<=1:
+                return lista
+            pivote=lista[0]
+            mayores=[r for r in lista[1:] if r.paquetes>pivote]
+            iguales=[r for r in lista[1:] if r.paquetes==pivote]
+            menor=[r for r in lista[1:] if r.paquetes<pivote]
+            return quick_sort(mayores)+[pivote]+iguales+quick_sort(menor)
+        self.repartidores=quick_sort(self.repartidores)
+    def
 

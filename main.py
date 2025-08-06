@@ -31,5 +31,10 @@ class EmpresaMensjeria:
             menor=[r for r in lista[1:] if r.paquetes<pivote]
             return quick_sort(mayores)+[pivote]+iguales+quick_sort(menor)
         self.repartidores=quick_sort(self.repartidores)
-    def
+    def bucar(self,nombre):
+        for r in self.repartidores:
+            if r.nombre.lower()==nombre.lower():
+                return r
+        return None
+
 

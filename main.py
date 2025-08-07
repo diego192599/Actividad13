@@ -89,4 +89,6 @@ def mostrar_menu():
 4. Ver estadísticas
 5. Salir
 """)
+def main():
+    empresa=EmpresaMensjeria
 

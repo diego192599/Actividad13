@@ -80,5 +80,13 @@ def clasificar_zona(zona):
             print(" Zona oeste asignada")
         case _:
             print(" Zona no reconocida")
-
+def mostrar_menu():
+    print("""
+--- MENÚ ---
+1. Agregar repartidor
+2. Mostrar ranking ordenado por paquetes
+3. Buscar repartidor por nombre
+4. Ver estadísticas
+5. Salir
+""")
 

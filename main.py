@@ -26,9 +26,9 @@ class EmpresaMensjeria:
             if len(lista)<=1:
                 return lista
             pivote=lista[0]
-            mayores=[r for r in lista[1:] if r.paquetes>pivote]
-            iguales=[r for r in lista[1:] if r.paquetes==pivote]
-            menor=[r for r in lista[1:] if r.paquetes<pivote]
+            mayores=[r for r in lista[1:] if r.paquetes>pivote.paquetes]
+            iguales=[r for r in lista[1:] if r.paquetes==pivote.paquetes]
+            menor=[r for r in lista[1:] if r.paquetes<pivote.paquetes]
             return quick_sort(mayores)+[pivote]+iguales+quick_sort(menor)
         self.repartidores=quick_sort(self.repartidores)
     def bucar(self,nombre):
@@ -36,5 +36,27 @@ class EmpresaMensjeria:
             if r.nombre.lower()==nombre.lower():
                 return r
         return None
+    def ranking(self):
+        print("\n Rankin de los repartidores")
+        for r in self.repartidores:
+            print(r)
+    def estadistica(self):
+        if not self.repartidores:
+            print("No hay datos de repartidores")
+            return
+        total=0
+        for r in self.repartidores:
+            total+=r.paquetes
+        promedio=total/len(self.repartidores)
+        max=self.repartidores[0].paquetes
+        min=self.repartidores[0].paquetes
+        for r in self.repartidores:
+            if r.paquetes>max:
+                max=r.paquetes
+            if r.paquetes<min:
+                min=r.paquetes
+        print("\n---Estadistica---")
+        print(f"Total de paquetes: {total}")
+        print(f"Promedio de paquetes: {promedio:.2f}")
 
 

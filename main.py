@@ -121,6 +121,7 @@ def main():
                     cantida = int(input("¿Cuantos repartidores se agregaran?: "))
                     for i in range(cantida):
                         print("\n --Ingreso de repartidores--")
+                        print(f"Repartidor {i+1}#")
                         nombre = input("Nombre: ").strip()
                         paquetes = int(input("Paquetes: "))
                         zona = input("Zona (norte, sur, este, oeste): ").strip()

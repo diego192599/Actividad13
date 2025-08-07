@@ -59,4 +59,26 @@ class EmpresaMensjeria:
         print(f"Total de paquetes: {total}")
         print(f"Promedio de paquetes: {promedio:.2f}")
 
+        print("Mayor numeros de entregas: ")
+        for r in self.repartidores:
+            if r.paquetes==max:
+                print(f"{r.nombre} ({r.paquetes})")
+
+        print("Menor numeros de entregas: ")
+        for r in self.repartidores:
+            if r.paquetes==min:
+                print(f"{r.nombre} ({r.paquetes})")
+def clasificar_zona(zona):
+    match zona.lower():
+        case "norte":
+            print("Zona norte asignada")
+        case "sur":
+            print("️ Zona sur asignada")
+        case "este":
+            print("️ Zona este asignada")
+        case "oeste":
+            print(" Zona oeste asignada")
+        case _:
+            print(" Zona no reconocida")
+
 
